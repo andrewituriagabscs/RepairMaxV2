@@ -1,0 +1,121 @@
+/* ==========================================================================
+   CSS Reset & Grayscale Color Palette
+   ========================================================================== */
+:root {
+    --gray-100: #F8F9FA;
+    --gray-200: #E9ECEF;
+    --gray-300: #DEE2E6;
+    --gray-400: #CED4DA;
+    --gray-500: #ADB5BD;
+    --gray-600: #6C757D;
+    --gray-700: #495057;
+    --gray-800: #343A40;
+    --gray-900: #212529;
+
+    --bg-main: var(--gray-100);
+    --bg-alt: #FFFFFF;
+    --text-dark: var(--gray-900);
+    --text-muted: var(--gray-600);
+    --accent: var(--gray-800);
+    --accent-hover: var(--gray-900);
+    --border-color: var(--gray-300);
+
+    /* Shadows mapped to your design metrics */
+    --shadow-sm: 0 2px 4px rgba(33, 37, 41, 0.05);
+    --shadow-md: 0 6px 15px rgba(33, 37, 41, 0.1);
+    --shadow-lg: 0 12px 30px rgba(33, 37, 41, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Better text rendering on WebKit and macOS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.7;
+    /* Aligned to your HTML's primary font */
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+}
+
+/* ==========================================================================
+   Base Typography
+   ========================================================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-dark);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Custom Components (Buttons & Cards)
+   ========================================================================== */
+button,
+.btn {
+    border-radius: 6px;
+    background-color: var(--accent);
+    color: var(--bg-alt);
+    border: none;
+    padding: 0.7rem 1.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+button:hover,
+.btn:hover {
+    background-color: var(--accent-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* Accessibility focus state for keyboard users */
+button:focus-visible,
+.btn:focus-visible {
+    outline: 2px solid var(--gray-500);
+    outline-offset: 2px;
+}
+
+/* Reusable Card Component */
+.card {
+    background-color: var(--bg-alt);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gray-400);
+    /* Subtle shadow matching your slider card hover state */
+    box-shadow: 0 12px 30px rgba(33, 37, 41, 0.06);
+}
